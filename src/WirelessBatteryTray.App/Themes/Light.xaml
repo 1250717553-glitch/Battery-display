@@ -1,0 +1,36 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Win11 浅色（Fluent 近似）：窗口底为半透明米白，卡片为纯白 + 极轻描边 -->
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF3F3F3" />
+    <SolidColorBrush x:Key="PanelBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="CardHoverBrush" Color="#FFF7F9FC" />
+    <SolidColorBrush x:Key="CardSelectedBrush" Color="#FFEAF1FB" />
+    <SolidColorBrush x:Key="ForegroundBrush" Color="#FF1A1A1A" />
+    <SolidColorBrush x:Key="SubtleForegroundBrush" Color="#FF6E6E6E" />
+    <SolidColorBrush x:Key="BorderBrush" Color="#FFE2E2E2" />
+    <SolidColorBrush x:Key="RowHoverBrush" Color="#FFF7F9FC" />
+    <SolidColorBrush x:Key="RowSelectedBrush" Color="#FFEAF1FB" />
+
+    <!-- 电量分档 -->
+    <SolidColorBrush x:Key="TierLowBrush" Color="#FFC42B1C" />
+    <SolidColorBrush x:Key="TierMediumBrush" Color="#FF9D5D00" />
+    <SolidColorBrush x:Key="TierHighBrush" Color="#FF0F7B0F" />
+    <SolidColorBrush x:Key="TierNoneBrush" Color="#FF8A8A8A" />
+
+    <!-- 低电量报警专用红（比 TierLow 更醒目，且与普通低电量区分） -->
+    <SolidColorBrush x:Key="AlertBrush" Color="#FFD32F2F" />
+
+    <!-- 状态圆点 -->
+    <SolidColorBrush x:Key="OnlineDotBrush" Color="#FF13A10E" />
+    <SolidColorBrush x:Key="OfflineDotBrush" Color="#FFB4B4B4" />
+
+    <!-- 图标底片与强调色 -->
+    <SolidColorBrush x:Key="IconBackdropBrush" Color="#FFF0F4FA" />
+    <SolidColorBrush x:Key="IconForegroundBrush" Color="#FF3B6EA5" />
+    <SolidColorBrush x:Key="AccentBrush" Color="#FF0067C0" />
+    <SolidColorBrush x:Key="TrackBrush" Color="#FFE8E8E8" />
+
+    <!-- 卡片阴影 -->
+    <DropShadowEffect x:Key="CardShadow" BlurRadius="14" ShadowDepth="2" Direction="270"
+                      Color="#FF000000" Opacity="0.10" />
+</ResourceDictionary>

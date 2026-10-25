@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BE6909E4-96D6-4C01-9058-F44722FB5016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WirelessBatteryTray.Core", "src\WirelessBatteryTray.Core\WirelessBatteryTray.Core.csproj", "{CEE68007-750E-4A55-BF6C-A7592A1F52D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteryProbe", "src\BatteryProbe\BatteryProbe.csproj", "{135690E4-8678-4A49-8607-DFF4119854EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WirelessBatteryTray.App", "src\WirelessBatteryTray.App\WirelessBatteryTray.App.csproj", "{5803039F-6FFD-4226-82DC-24AB5421731E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEE68007-750E-4A55-BF6C-A7592A1F52D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE68007-750E-4A55-BF6C-A7592A1F52D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE68007-750E-4A55-BF6C-A7592A1F52D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE68007-750E-4A55-BF6C-A7592A1F52D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135690E4-8678-4A49-8607-DFF4119854EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135690E4-8678-4A49-8607-DFF4119854EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135690E4-8678-4A49-8607-DFF4119854EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135690E4-8678-4A49-8607-DFF4119854EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5803039F-6FFD-4226-82DC-24AB5421731E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5803039F-6FFD-4226-82DC-24AB5421731E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5803039F-6FFD-4226-82DC-24AB5421731E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5803039F-6FFD-4226-82DC-24AB5421731E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEE68007-750E-4A55-BF6C-A7592A1F52D8} = {BE6909E4-96D6-4C01-9058-F44722FB5016}
+		{135690E4-8678-4A49-8607-DFF4119854EB} = {BE6909E4-96D6-4C01-9058-F44722FB5016}
+		{5803039F-6FFD-4226-82DC-24AB5421731E} = {BE6909E4-96D6-4C01-9058-F44722FB5016}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+# Build output
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+
+# Test / debug artifacts
+_accept/
+_probe/
+*.log
+
+# Local scratch
+预览图/
+*.tmp
+*.bak
+*.bak-*
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+# Local design/requirements notes (contain machine-specific details)
+需求与基线.md
+P1-交付报告.md
+P2-技术调研.md
