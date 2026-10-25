@@ -6,6 +6,12 @@
 
 [中文](README.md) | **English**
 
+<div align="center">
+  <a href="https://github.com/1250717553-glitch/Battery-display">
+    <img src="docs/screenshots/qr-poster.png" width="400" alt="扫码打开仓库">
+  </a>
+</div>
+
 A lightweight Windows tray utility that reports the battery level of
 **2.4 GHz wireless receivers** and **Bluetooth peripherals** (mouse / keyboard /
 headset) in the notification area.

@@ -6,6 +6,12 @@
 
 **中文** | [English](README.en.md)
 
+<div align="center">
+  <a href="https://github.com/1250717553-glitch/Battery-display">
+    <img src="docs/screenshots/qr-poster.png" width="400" alt="扫码打开仓库">
+  </a>
+</div>
+
 一个常驻托盘的 Windows 小工具，在通知区域显示 **2.4G 无线接收器** 与
 **蓝牙外设**（鼠标 / 键盘 / 耳机）的电量和连接状态。
 
