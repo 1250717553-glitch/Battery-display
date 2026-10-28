@@ -12,16 +12,22 @@ git config --global user.name   # 应为你的 GitHub 用户名
 git config --global user.email  # 应为你的 GitHub 邮箱
 ```
 
-本机已配置：
-- `user.name = 1250717553-glitch`
-- `user.email = 1250717553@qq.com`
-
-**若未配置**（首次使用）：
+首次使用需要配置身份（把下面两行替换成你自己的）：
 
 ```powershell
-git config --global user.name "1250717553-glitch"
-git config --global user.email "1250717553@qq.com"
+git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub邮箱"
 git config --global credential.helper manager
+```
+
+> 若 `user.email` 填的是 GitHub 上的私有邮箱（形如
+> `12345678+用户名@users.noreply.github.com`），提交记录里不会暴露你的真实邮箱。
+
+**验证是否已配置**：
+
+```powershell
+git config --global user.name
+git config --global user.email
 ```
 
 > **本机没有 `gh` CLI**，所以一律走「网页建仓库 + git push」路线，不需要安装。
