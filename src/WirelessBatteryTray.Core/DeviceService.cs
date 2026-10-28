@@ -145,8 +145,9 @@ public sealed class DeviceService : IDeviceService, IDisposable
                 return;
             }
 
-            // 定时轮询只读缓存 + 仅对已连接的 HID 做轻量探测，蓝牙不在后台主动建连（D4）。
-            await SafeRefreshAsync(readBatteries: false, ct).ConfigureAwait(false);
+            // 定时真读：托盘数字必须随时间更新，否则会一直停在启动那一刻的值，
+            // 用户看到的就是"永远不变的电量"。（此前误传 false，只回缓存、不做任何探测。）
+            await SafeRefreshAsync(readBatteries: true, ct).ConfigureAwait(false);
         }
     }
 

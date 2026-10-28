@@ -79,6 +79,8 @@ public sealed class TrayIconController : IDisposable
         {
             Interval = TimeSpan.FromSeconds(Math.Clamp(_config.RefreshIntervalSeconds, 15, 3600)),
         };
+        // 后台探测由 DeviceService 的循环负责（它真读电量并通过 DevicesChanged 通知），
+        // 托盘这里只做「拿缓存更新图标」，避免两个定时器重复探测同一批设备。
         _timer.Tick += async (_, _) => await RefreshAsync(false).ConfigureAwait(true);
         _timer.Start();
     }

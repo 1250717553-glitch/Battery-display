@@ -136,6 +136,32 @@ dotnet run --project src/BatteryProbe -c Release -- --duration 10
 dotnet run --project src/BatteryProbe -c Release -- --diagnose
 ```
 
+## Changelog
+
+### 2026-10-28 · Fix: tray battery never refreshed
+
+**Problem:** the battery number on the tray icon stayed frozen at the value read
+during startup. It only updated after opening the device window.
+
+**Root cause:** the background timer called the snapshot API with
+`refreshBatteries: false`, which returns the in-memory cache **without running
+any device probe at all**. The cached value therefore never changed — directly
+contradicting the expectation that a tray number is always current.
+
+**Fix:**
+- The background loop now performs a **real probe**, so the tray number updates over time
+- Refresh interval changed from 45 s to **120 s**: shorter re-establishes Bluetooth
+  GATT connections too often (can disturb audio devices), longer makes the number
+  visibly stale — 120 s balances both
+- Added a **config migration**: a legacy 45 s value upgrades to 120 s automatically,
+  while any other user-set value is left untouched
+- The tray timer now only re-renders the icon from cache; actual probing is owned
+  solely by `DeviceService`, avoiding duplicate reads
+
+**Verification:** over a 130 s run the Bluetooth battery was read **twice**, with a
+measured interval of exactly 120 s (before the fix the same window contained a
+single read — the one at startup).
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Copyright (c) 2026 1250717553-glitch.

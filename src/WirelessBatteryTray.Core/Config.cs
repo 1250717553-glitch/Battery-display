@@ -9,7 +9,11 @@ public sealed class AppConfig
 {
     public Dictionary<string, string> Aliases { get; set; } = new();
 
-    public int RefreshIntervalSeconds { get; set; } = 45;
+    /// <summary>
+    /// 后台刷新间隔（秒）。默认 120：太短会频繁重建蓝牙 GATT 连接（可能干扰音频设备），
+    /// 太长则托盘数字明显滞后。120 秒是两者折中。
+    /// </summary>
+    public int RefreshIntervalSeconds { get; set; } = 120;
 
     public int WarningThresholdPercent { get; set; } = 20;
 
@@ -76,13 +80,32 @@ public sealed class JsonConfigStore : IConfigStore
                 }
 
                 var json = File.ReadAllText(AppPaths.ConfigFile);
-                return JsonSerializer.Deserialize<AppConfig>(json, Options) ?? new AppConfig();
+                AppConfig config = JsonSerializer.Deserialize<AppConfig>(json, Options) ?? new AppConfig();
+                return Migrate(config);
             }
             catch (Exception ex) when (ex is IOException or JsonException or UnauthorizedAccessException)
             {
                 return new AppConfig();
             }
         }
+    }
+
+    /// <summary>
+    /// 一次性配置迁移。老版本把后台刷新间隔默认成 45 秒，那会导致蓝牙 GATT
+    /// 连接过于频繁；新版本改为 120 秒。若用户没手动改过（仍是 45），升级它。
+    /// 手动改成其它值的保持不动。
+    /// </summary>
+    private static AppConfig Migrate(AppConfig config)
+    {
+        const int LegacyDefaultInterval = 45;
+        const int NewDefaultInterval = 120;
+
+        if (config.RefreshIntervalSeconds == LegacyDefaultInterval)
+        {
+            config.RefreshIntervalSeconds = NewDefaultInterval;
+        }
+
+        return config;
     }
 
     public void Save(AppConfig config)
